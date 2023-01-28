@@ -35,6 +35,26 @@ public class Main {
         return version;
     }
     public static void task3() {
+        int deliveryDays;
         System.out.println("Задача 3");
+        for (int i = 15; i < 120; i += 30) {
+            deliveryDays = countingDeliveryDays(i);
+            if (deliveryDays != 0) System.out.println("Потребуется дней: " + deliveryDays);
+            else System.out.println("Доставка не осуществляется");
+
+        }
+    }
+    public static int countingDeliveryDays(int deliveryDistance) {
+        int deliveryDays = 0;
+        if (deliveryDistance <= 20) {
+            deliveryDays = deliveryDays + 1;
+        } else if (deliveryDistance <= 60) {
+            deliveryDays = deliveryDays + 2;
+        } else if (deliveryDistance <= 100) {
+            deliveryDays = deliveryDays + 3;
+        } else {
+            return deliveryDays;
+        }
+        return deliveryDays;
     }
 }
